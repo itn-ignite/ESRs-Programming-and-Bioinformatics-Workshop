@@ -7,7 +7,6 @@ header:
 article_header:
   type: overlay
   theme: dark
-  background_color: '#203028'
   background_image:
     src: /docs/ignite.jpg
     
