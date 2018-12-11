@@ -2,8 +2,7 @@
 ## ESRs Programming and Bioinformatics Workshop 
 ---
 
-<img src="https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/blob/master/docs/ignite.jpg" alt="ignite" width=500/>
-
+![](https://i.imgur.com/KMVYY8O.png =250x)
 ---
 
 ###### Follow us in [Twitter](https://twitter.com/itn_ignite) and our [Webpage](http://www.itn-ignite.eu/). 
