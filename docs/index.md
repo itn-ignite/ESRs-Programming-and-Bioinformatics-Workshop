@@ -1,6 +1,9 @@
-<img src="https://i.imgur.com/nG4PtGQ.jpg" align="middle" width="750"/>
+<p align="center">
+  <img src="https://i.imgur.com/nG4PtGQ.jpg" width="800"/>
+</p>
 
 ## ESRs Programming and Bioinformatics Workshop 
+
  
 Follow us in [Twitter](https://twitter.com/itn_ignite) and our [Webpage](http://www.itn-ignite.eu/). 
 
