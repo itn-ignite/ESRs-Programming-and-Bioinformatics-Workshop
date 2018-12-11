@@ -10,7 +10,6 @@ header:
 
 #### December 1, 2018
 19:00 Meet and Greet / Get Together :beers: 
-- Sponsored by [Michi](https://www.palaeontologie.geowissenschaften.uni-muenchen.de/personen/wissenschaft/michael_eitel/index.html)
 
 #### Workshop Program (December 2-7, 2018)
 
