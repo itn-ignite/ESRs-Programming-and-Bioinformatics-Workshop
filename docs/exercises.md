@@ -11,12 +11,14 @@ header:
 #### Material for all the classes of the ESRs Programming Workshop with the solutions. 
 
 ## R  
-- [R Exercises]()   
-- [R Solutions]()   
+- [R Exercises](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/R_workshop)   
+  - [Part 1]()
+  - [Part 2]()
+  - [Part 3]()
 
 ## Python  
 - [Python Exercises]()  
-- [Python Solutions]()   
+  
 
 ## BASH  
 - [BASH Exercises]()   
