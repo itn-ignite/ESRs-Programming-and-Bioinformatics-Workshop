@@ -2,7 +2,7 @@
 ## ESRs Programming and Bioinformatics Workshop 
 ---
 
-![](https://i.imgur.com/KMVYY8O.png =250)
+![](https://i.imgur.com/KMVYY8O.png =100x20)
 ---
 
 ###### Follow us in [Twitter](https://twitter.com/itn_ignite) and our [Webpage](http://www.itn-ignite.eu/). 
