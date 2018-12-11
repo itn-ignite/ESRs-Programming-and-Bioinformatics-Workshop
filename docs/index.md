@@ -9,7 +9,7 @@ article_header:
   theme: dark
   background_color: '#203028'
   background_image:
-    src: /docs/ignite.png
+    src: /docs/ignite.jpeg
     
 ---
 
