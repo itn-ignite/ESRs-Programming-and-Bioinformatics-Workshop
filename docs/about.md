@@ -14,6 +14,7 @@ For more info follow us on [Twitter](https://twitter.com/itn_ignite)  or visit o
     
  ![](https://i.imgur.com/KMVYY8O.png)   
  
+ <br />
  
 *This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 764840*   
 
