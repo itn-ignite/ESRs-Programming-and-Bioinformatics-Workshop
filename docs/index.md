@@ -3,7 +3,7 @@
 ---
 
 
-![useful image]({{ site.url }}/assets/ignite.jpg)
+![useful image]({{ https://i.imgur.com/KMVYY8O.png }}/assets/ignite.jpg)
 
 
 ---
