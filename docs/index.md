@@ -1,5 +1,5 @@
-<p align="center">
-  <img src="https://i.imgur.com/nG4PtGQ.jpg" width="2000"/>
+<p align="middle">
+  <img src="https://i.imgur.com/nG4PtGQ.jpg" width="900"/>
 </p>
 
 ## Es Programming and Bioinformatics Workshop 
