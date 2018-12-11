@@ -2,7 +2,7 @@
 ## ESRs Programming and Bioinformatics Workshop 
 ---
 
-<img src="/ignite.jpg" alt="ignite" width=500/>
+<img src="https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/blob/master/docs/ignite.jpg" alt="ignite" width=500/>
 
 ---
 
