@@ -8,7 +8,8 @@ article_header:
   type: overlay
   theme: dark
   background_image:
-    src: /docs/ignite.jpg
+    background_color: '#203028'
+    src: /ignite.jpg
     
 ---
 
