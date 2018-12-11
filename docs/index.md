@@ -19,5 +19,4 @@ article_header:
 - [Twitter](https://twitter.com/itn_ignite)
 
 
----
-This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 764840
+###### This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 764840
