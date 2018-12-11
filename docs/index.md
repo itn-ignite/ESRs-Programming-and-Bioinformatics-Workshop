@@ -1,6 +1,6 @@
-# Es Programming and Bioinformatics Workshop 
+# ESRs Programming and Bioinformatics Workshop 
  
-<img src="https://i.imgur.com/nG4PtGQ.jpg" alt="drawing" width="200"/>
+<img src="https://i.imgur.com/nG4PtGQ.jpg" alt="ignite" width="800"/>
 
  
 Follow us in [Twitter](https://twitter.com/itn_ignite) and our [Webpage](http://www.itn-ignite.eu/). 
