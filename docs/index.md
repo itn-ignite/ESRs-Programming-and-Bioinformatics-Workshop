@@ -1,5 +1,5 @@
 <p align="middle">
-  <img src="https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/blob/master/docs/ignite.jpg" width=200/>
+  <img src="https://i.imgur.com/nG4PtGQ.jpg" width=500/>
 </p>
 
 ## ESRs Programming and Bioinformatics Workshop 
