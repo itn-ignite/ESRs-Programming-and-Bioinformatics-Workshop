@@ -14,7 +14,12 @@ article_header:
     
 ---
 
+ ![](https://i.imgur.com/KMVYY8O.png)  
+
+# IGNITE
+- [Webpage](http://www.itn-ignite.eu/)
+- [Twitter](https://twitter.com/itn_ignite)
 
 
-
-
+---
+This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 764840
