@@ -4,6 +4,7 @@ header:
   theme: dark
 article_header:
   theme: dark
+  type: overlay
   background_image:
     background_color: '#203028'
     src: /ignite.jpg
