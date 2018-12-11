@@ -1,6 +1,6 @@
 ---
 layout: article
-title: ESRs Programming and Bioinformatics Workshop 
+title: 
 mode: immersive
 header:
   theme: dark
