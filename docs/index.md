@@ -1,6 +1,6 @@
 ---
 layout: article
-title: ESRs Programming Workhop                 MedILS  -  Split, Crotia                     
+title: ESRs Programming and Bioinformatics Workhop                 MedILS  -  Split, Crotia                     
 mode: immersive
 header:
   theme: dark
