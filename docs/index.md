@@ -3,7 +3,6 @@ layout: article
 header:
   theme: dark
 article_header:
-  type: overlay
   theme: dark
   background_image:
     background_color: '#203028'
