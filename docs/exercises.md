@@ -9,11 +9,18 @@ header:
 ---
 
 #### Material for all the classes of the ESRs Programming Workshop with the solutions. 
-Some update will be made the following days to this page. Stay tuned!  
+Some updates will be made the following days to this page. Stay tuned!  
 
 ## LRZ
-Instructions on how to use the supercomputing center of Munich ([LRZ](https://www.lrz.de/)).
-**NOTE:** Only for users with account of LRZ
+Instructions on how to use the supercomputing center of Munich ([LRZ](https://www.lrz.de/)).    
+**NOTE:** Only for users with account of LRZ. Please visit the website of the LRZ to see if you are elegible for using the systems.    
+
+- [Installing the VPN](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/blob/master/Workshop_material/LRZ/vpn.md)
+- [Connecting](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/blob/master/Workshop_material/LRZ/connect.md) 
+- [Modules](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/blob/master/Workshop_material/LRZ/modules.md)
+- [Installing programs](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/blob/master/Workshop_material/LRZ/locally.md)
+- [SLURM Scripts](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/blob/master/Workshop_material/LRZ/example_scripts.md)
+
 
 ## BASH  
 Provided in Markdown format and jupyther-notebook.  
