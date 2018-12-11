@@ -1,4 +1,4 @@
-<p align="left">
+<p align="middle">
   <img src="https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/blob/master/docs/ignite.jpg" width=200/>
 </p>
 
