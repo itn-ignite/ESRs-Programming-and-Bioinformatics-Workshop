@@ -1,10 +1,9 @@
-<p align="middle">
+<p align="left">
   <img src="https://i.imgur.com/nG4PtGQ.jpg" width="900"/>
 </p>
 
-## Es Programming and Bioinformatics Workshop 
+## ESRs Programming and Bioinformatics Workshop 
 
-<br />
 <br />
 <br />
 Follow us in [Twitter](https://twitter.com/itn_ignite) and our [Webpage](http://www.itn-ignite.eu/). 
