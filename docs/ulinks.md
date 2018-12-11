@@ -41,11 +41,14 @@ header:
 ---  
 # Other links   
 
-# StackOverflow
-- [Forums]()
+### Stack Overflow
+- [Forums](https://stackoverflow.com/)
 
-# GitHub
-- [Forums]()  
+### GitHub
+- [Forums](https://github.com/)
+
+### Biostars
+- [Forums](https://www.biostars.org/)
 
 # Perl
 #### Books
