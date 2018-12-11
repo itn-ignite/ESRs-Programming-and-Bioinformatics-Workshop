@@ -16,38 +16,47 @@ header:
 - [Forums]()    
 
 # R
-- [R]()
-- [RStudio]()
+- [R](https://cran.r-project.org/)
+- [RStudio](https://www.rstudio.com/products/rstudio/download/)
 - [Books]()
 - [Online classes]()
-- [Bioconductor]()
-- [CRAN]()
+- [Bioconductor](https://www.bioconductor.org/)
 - [Forums]()
 
 # Python
+- [Python](https://www.python.org/)
 - [Books]()
 - [Online classes]()
-- [BioPython]()
+- [BioPython](https://biopython.org/)
+- [Conda](https://www.anaconda.com/download/)
 - [Forums]()  
 
 ---  
-# Other links   
+# Other links  
+
+### Perl  
+- [Perl](https://www.perl.org/)
+- [Books]()
+- [Online classes]()
+- [BioPerl](https://bioperl.org/)
+- [Forums]()
 
 ### Stack Overflow
 - [Forums](https://stackoverflow.com/)
 
-### GitHub
-- [Forums](https://github.com/)
-
 ### Biostars
 - [Forums](https://www.biostars.org/)
 
-### Perl  
-- [Perl]()
-- [Books]()
-- [Online classes]()
-- [BioPerl]()
-- [Forums]()
+### SeqAnswers
+- [Forums](http://seqanswers.com/)
+
+### GitHub
+- [Forums](https://github.com/)
+
+### GitPages
+To develop a simple website for your project. Use to built this website.  
+- [Tutorial](https://pages.github.com/)
+
 
 
 ---
