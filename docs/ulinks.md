@@ -11,6 +11,10 @@ header:
 #### Links to useful material like books, online classes and more.  
 More updates and links coming soon. Stay tuned!  
 
+# IGNITE
+- [Webpage](http://www.itn-ignite.eu/)
+- [Twitter](https://twitter.com/itn_ignite)
+
 # Linux  
 - [Books]()  
 - [Online classes]()  
@@ -62,5 +66,4 @@ To develop a simple website for your project. Used to built this website.
 
 
 ---
-###### Creator: Ramon Rivera  
 ###### Last Modified: December 11, 2018  
