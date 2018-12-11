@@ -1,4 +1,4 @@
-<img src="https://i.imgur.com/nG4PtGQ.jpg" alt="ignite" width="1000"/>
+<img src="https://i.imgur.com/nG4PtGQ.jpg" align="middle" width="900"/>
 
 ## ESRs Programming and Bioinformatics Workshop 
  
