@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Inroduction to R</title>
+    <meta charset="utf-8">
+    <meta name="author" content="Maja Kuzman" />
+    <meta name="date" content="2018-12-03" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/default-fonts.css" rel="stylesheet" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Inroduction to R
+### Maja Kuzman
+### 2018-12-03
+
+---
+
+
+
+
+class: inverse, center, middle
+
+# R, Rstudio, Rmd
+
+---
+### How can we use R and RStudio?  
+
+- console   
+- script   
+- notebook:   
+     new chunk: ctrl + ALT + i 
+
+--
+### What can we do with R? 
+
+-  We can use R as a calculator!  
+
+### Try it:  
+     
+Add a new chunk to line 66.   
+Calculate the result of 13%/%3 and 13%%3. 
+
+--
+
+*We can even do better than that...* 
+
+---
+class: inverse, center, middle
+
+# Variables and data structures
+
+---
+### Variables 
+
+
+
+```r
+myFirstNumber &lt;- 0.1
+myFirstVector &lt;- c(2, 3, 7, 8)
+```
+
+--
+
+-&gt; Environment  
+-&gt; call the variable by name  
+-&gt; print() function  
+-&gt; one line, part of code shaded and CTRL +ENTER
+
+
+```r
+myFirstNumber
+```
+
+```
+## [1] 0.1
+```
+
+```r
+print(myFirstNumber)
+```
+
+```
+## [1] 0.1
+```
+
+---
+class: middle, center
+
+### Data structures in R  
+
+vectors  
+list
+matrix  
+data.frame  
+factors  
+
+---
+### Vectors 
+
+
+```r
+nVec &lt;- c(1, 5, 7, 9, 12.5) # numeric vector
+cVec &lt;- c("a", "b", "some words") # character vector
+lVec &lt;- c(TRUE, FALSE, T, T, F) # logical vector
+
+vvec &lt;- c(1,5, "nesto")
+vvec
+```
+
+```
+## [1] "1"     "5"     "nesto"
+```
+
+
+```r
+nVec
+```
+
+```
+## [1]  1.0  5.0  7.0  9.0 12.5
+```
+
+```r
+cVec
+```
+
+```
+## [1] "a"          "b"          "some words"
+```
+
+```r
+lVec
+```
+
+```
+## [1]  TRUE FALSE  TRUE  TRUE FALSE
+```
+
+---
+
+### Matrices  
+
+Matrices are tables that have rows and columns and store elements of same type.
+
+```r
+y &lt;- matrix(1:20, nrow=5,ncol=4)
+y
+```
+
+```
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    6   11   16
+## [2,]    2    7   12   17
+## [3,]    3    8   13   18
+## [4,]    4    9   14   19
+## [5,]    5   10   15   20
+```
+
+
+---
+
+### Data frames
+
+
+```r
+mydf &lt;- data.frame( firstColumn = c(1,5,7),
+                    secondColumn = c("a","b","third Element"))
+mydf
+```
+
+```
+##   firstColumn  secondColumn
+## 1           1             a
+## 2           5             b
+## 3           7 third Element
+```
+
+---
+
+### Lists
+
+
+
+```r
+l &lt;- list(firstElement = c(1,5,44,6),
+          second = c("a", 3),
+          y)
+l
+```
+
+```
+## $firstElement
+## [1]  1  5 44  6
+## 
+## $second
+## [1] "a" "3"
+## 
+## [[3]]
+##      [,1] [,2] [,3] [,4]
+## [1,]    1    6   11   16
+## [2,]    2    7   12   17
+## [3,]    3    8   13   18
+## [4,]    4    9   14   19
+## [5,]    5   10   15   20
+```
+---
+
+### Factors
+
+
+```r
+gender &lt;- c(rep("male",20), rep("female", 30)) 
+gender &lt;- factor(gender) 
+gender
+```
+
+```
+##  [1] male   male   male   male   male   male   male   male   male   male  
+## [11] male   male   male   male   male   male   male   male   male   male  
+## [21] female female female female female female female female female female
+## [31] female female female female female female female female female female
+## [41] female female female female female female female female female female
+## Levels: female male
+```
+
+
+
+```r
+gender[2] &lt;- "unknown"
+```
+
+```
+## Warning in `[&lt;-.factor`(`*tmp*`, 2, value = "unknown"): invalid factor
+## level, NA generated
+```
+
+```r
+gender
+```
+
+```
+##  [1] male   &lt;NA&gt;   male   male   male   male   male   male   male   male  
+## [11] male   male   male   male   male   male   male   male   male   male  
+## [21] female female female female female female female female female female
+## [31] female female female female female female female female female female
+## [41] female female female female female female female female female female
+## Levels: female male
+```
+
+```r
+as.numeric(gender)
+```
+
+```
+##  [1]  2 NA  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  2  1  1  1
+## [24]  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1  1
+## [47]  1  1  1  1
+```
+
+---
+
+### Factors  
+
+If something is weird, factors are the usual suspects.. 
+
+
+
+```r
+xx &lt;- factor(sample(1:15,20, replace = T))
+xx
+```
+
+```
+##  [1] 5  7  1  11 7  8  15 3  1  10 2  1  13 7  12 4  6  15 6  13
+## Levels: 1 2 3 4 5 6 7 8 10 11 12 13 15
+```
+
+--
+
+If you want a normal numeric vector:
+
+```r
+as.numeric(xx)
+```
+
+```
+##  [1]  5  7  1 10  7  8 13  3  1  9  2  1 12  7 11  4  6 13  6 12
+```
+
+--
+
+you should do this... 
+
+
+```r
+as.numeric(as.character(xx))
+```
+
+```
+##  [1]  5  7  1 11  7  8 15  3  1 10  2  1 13  7 12  4  6 15  6 13
+```
+
+---
+class: center, middle, inverse  
+
+
+# Vectors
+
+## The basics
+
+---
+### What we can do with vectors:  
+
+#### Make a vector c()  
+
+
+You can make a vector by using the function c() (concatenate). Here is an example of vectors myFirstvector, and myFirstSequence:
+
+
+```r
+myFirstVector &lt;- c("some words","p","word", "last one")
+myFirstSequence &lt;- 1:4
+```
+
+---
+
+## Subsetting [ ]
+
+Print the whole vector
+
+
+```r
+myFirstVector
+```
+
+```
+## [1] "some words" "p"          "word"       "last one"
+```
+
+```r
+myFirstSequence
+```
+
+```
+## [1] 1 2 3 4
+```
+
+Print third element in a vector
+
+```r
+myFirstVector[3]
+```
+
+```
+## [1] "word"
+```
+
+```r
+myFirstSequence[3]
+```
+
+```
+## [1] 3
+```
+
+---
+
+### Access multiple elements:  
+
+Provide a vector of positions to look at:  
+
+```r
+myFirstVector
+```
+
+```
+## [1] "some words" "p"          "word"       "last one"
+```
+
+
+```r
+myFirstVector[c(1,3)]
+```
+
+```
+## [1] "some words" "word"
+```
+
+
+```r
+somePositions &lt;- c(1,3)
+somePositions
+```
+
+```
+## [1] 1 3
+```
+
+
+```r
+myFirstVector[somePositions]
+```
+
+```
+## [1] "some words" "word"
+```
+
+---
+
+### Exercise! 
+
+1. Create a vector named myvector that contains numbers 15,16,17,18 and 20.  
+2. Get first and third number in the vector by subsetting.  
+
+(line 222 in the document)  
+
+Solution: 
+
+--
+
+
+```r
+myvector &lt;- c(15:18,20) 
+myvector[c(1,3)]
+```
+
+```
+## [1] 15 17
+```
+
+or like this..
+
+
+```r
+thosePositions &lt;- c(1,3)
+myvector[thosePositions]
+```
+
+```
+## [1] 15 17
+```
+
+or like this:
+
+
+```r
+myvector[c(TRUE,FALSE,TRUE,FALSE,FALSE)]
+```
+
+```
+## [1] 15 17
+```
+
+---
+
+### Think about it!
+
+#### What happened here??:
+
+```r
+someothervector &lt;- c(1,0,1,0,1)
+myFirstVector[someothervector]
+myFirstVector[as.logical(someothervector)]
+```
+
+--
+
+
+```
+## [1] "some words" "some words" "some words"
+```
+
+```
+## [1] "some words" "word"       NA
+```
+
+---
+
+### Basic operation on vectors  
+
+Same as on numbers:  
+\+  
+\-  
+/  
+\*  
+
+Example:   
+
+#### Multiplication  by constant  
+
+
+```r
+someothervector * 0.5
+```
+
+```
+## [1] 0.5 0.0 0.5 0.0 0.5
+```
+
+---
+
+#### Multiplication by other vector:
+
+I) SAME size  
+
+
+```r
+someothervector
+```
+
+```
+## [1] 1 0 1 0 1
+```
+
+```r
+someothervector * 1:5
+```
+
+```
+## [1] 1 0 3 0 5
+```
+
+II) DIFFERENT size : recycling *because why not.*
+
+
+```r
+someothervector*c(0.3,0.1)
+```
+
+```
+## Warning in someothervector * c(0.3, 0.1): longer object length is not a
+## multiple of shorter object length
+```
+
+```
+## [1] 0.3 0.0 0.3 0.0 0.3
+```
+
+```r
+c(1,2,3,4,5,6) * 1:2 # doesnt produce a warning
+```
+
+```
+## [1]  1  4  3  8  5 12
+```
+
+---
+
+### Basic comparisons  
+
+The following will return a logical vector for every compared position:
+
+
+```r
+someothervector == 1
+```
+
+```
+## [1]  TRUE FALSE  TRUE FALSE  TRUE
+```
+
+
+```r
+someothervector == c(1,0,1,0,1)
+```
+
+```
+## [1] TRUE TRUE TRUE TRUE TRUE
+```
+
+
+```r
+someothervector&gt;0
+```
+
+```
+## [1]  TRUE FALSE  TRUE FALSE  TRUE
+```
+
+--
+
+#### what happened here?  
+
+
+```r
+someothervector[someothervector&gt;0]
+```
+
+```
+## [1] 1 1 1
+```
+
+---
+### Exercise: Multiplication, recycling and comparison.   
+1. Multiply your myvector by c(0.1, 0.2)  
+     -&gt; what do you expect to get??
+2. Check if you get what you expected by comparing it to vector you expect to get :)   
+
+(line ~ 289)  
+
+Solution:  
+
+--
+
+
+```r
+result &lt;- myvector*c(0.1,0.2)
+```
+
+```
+## Warning in myvector * c(0.1, 0.2): longer object length is not a multiple
+## of shorter object length
+```
+
+
+```r
+result==c(1.5, 3.2, 1.7, 3.6, 2.0)
+```
+
+```
+## [1]  TRUE  TRUE FALSE  TRUE  TRUE
+```
+ ... 
+
+--
+
+WHAT?
+
+---
+
+### Exercise: Multiplication, recycling and comparison.   
+1. Return only ELEMENTS in myvector that are smaller then 17.
+     -&gt; hint - use subsetting and comparison. 
+
+
+
+```r
+myvector[ ??? ]
+```
+
+We want to get this:
+
+
+
+```
+## [1] 15 16
+```
+
+---
+
+### Exercise: Multiplication, recycling and comparison.   
+1.  
+
+
+
+```r
+myvector[ ??? ]
+```
+
+We want to get this:
+
+
+
+```
+## [1] 15 16
+```
+
+
+---
+
+### Logical operators
+
+AND: &amp; 
+
+
+```
+##   first_second TRUE. FALSE.
+## 1         TRUE  TRUE  FALSE
+## 2        FALSE FALSE  FALSE
+```
+
+OR: |  
+
+
+```
+##   first_second TRUE. FALSE.
+## 1         TRUE  TRUE   TRUE
+## 2        FALSE  TRUE  FALSE
+```
+
+NOT: ! 
+TRUE -&gt; FALSE  
+FALSE -&gt; TRUE 
+
+They are used in a following way: 
+
+
+```r
+firstLogical &lt;- c(TRUE, TRUE, FALSE, FALSE) 
+secondLogical &lt;- c(TRUE, FALSE, TRUE, FALSE)
+firstLogical &amp; secondLogical
+firstLogical | secondLogical
+! firstLogical
+```
+
+---
+
+### Exercise: Subset by logical indexes
+1. Return all the elements from your vector that are divisable by 3.  
+2. Return all the elements from your vector that are divisable by 3 OR NOT divisable by 2.  
+
+
+remember:  
+     x == 0 - where is x equal to 0  
+     x%%5 -&gt; gives you the modulo while dividing x by 5  
+
+Solution?  
+ (around line 333)   
+
+--
+
+
+```r
+myvector[myvector%%3==0]
+```
+
+```
+## [1] 15 18
+```
+
+---
+
+### Exercise: Subset by logical indexes
+Return all the elements from your vector that are divisable by 3 OR NOT divisable by 2.
+
+remember:  
+     x == 0 - where is x equal to 0  
+     x != 0 - not equal to   
+
+Solution:  
+
+--
+
+
+```r
+myvector[(myvector%%3==0)| (myvector%%2!=0)]
+```
+
+```
+## [1] 15 17 18
+```
+
+
+---
+class: inverse, center, middle
+
+## Functions 
+#### Some useful functions  
+
+---
+
+### names
+
+Assigns names to elements or returns names for elements.  
+
+
+```r
+names(someothervector) 
+```
+
+```
+## NULL
+```
+
+```r
+names(someothervector) &lt;- c("one", "one","one", "zero","zero")
+someothervector
+```
+
+```
+##  one  one  one zero zero 
+##    1    0    1    0    1
+```
+
+*Use it wisely*  
+
+--
+
+You can subset by names.. kind of.
+
+--
+
+
+```r
+someothervector["one"]
+```
+
+```
+## one 
+##   1
+```
+
+---
+
+### length - Gives you the length of the vector:    
+
+
+```r
+length(someothervector)
+```
+
+```
+## [1] 5
+```
+
+--
+
+### unique -Gives you all unique elements in your vector:   
+
+```r
+unique(someothervector)
+```
+
+```
+## [1] 1 0
+```
+
+--
+### table : gives you list of all elements and counts them  
+
+
+```r
+table(someothervector)
+```
+
+```
+## someothervector
+## 0 1 
+## 2 3
+```
+
+---
+## Math:  
+
+
+
+```r
+sum(someothervector)
+```
+
+```
+## [1] 3
+```
+
+```r
+mean(someothervector)
+```
+
+```
+## [1] 0.6
+```
+
+```r
+sd(someothervector)
+```
+
+```
+## [1] 0.5477226
+```
+
+```r
+summary(someothervector)
+```
+
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##     0.0     0.0     1.0     0.6     1.0     1.0
+```
+
+
+---
+
+## more random math:  
+
+### sample - gives you random numbers from a vector
+
+```r
+sample(1:100, 10)
+```
+
+```
+##  [1]  6 94 13 70  8 85 29 22 51 89
+```
+
+--
+
+### rnorm - gives you 10 random numbers from normal distribution with mean=0 and sd=1  
+
+
+```r
+rnorm(10, mean = 0, sd = 1)
+```
+
+```
+##  [1] -0.1964425  0.2978207  0.2091279  1.4474142 -1.0807244  0.5326082
+##  [7] -0.4800056  0.7794809  0.5395540  0.4871732
+```
+
+--
+
+analogously, rpois, runif
+
+
+```r
+runif(n = 10, min=10, max=20)
+```
+
+```
+##  [1] 12.85292 13.76787 13.42492 12.56126 13.91028 13.26232 13.91989
+##  [8] 16.21808 14.35284 18.07418
+```
+
+```r
+rpois(n = 10, lambda = 2)
+```
+
+```
+##  [1] 2 3 5 0 0 2 2 5 4 1
+```
+
+---
+
+#### Example usage: IS MY DATA NORMAL?  
+
+
+```r
+somedata &lt;- c(1:10, 1:7, 1:5)
+plot(density(somedata))
+```
+
+![](VectorsAndFunctionsPrezentation_files/figure-html/unnamed-chunk-52-1.png)&lt;!-- --&gt;
+
+*yeah, looks pretty normal...*  
+
+--- 
+
+### Exercise:  
+Lets double check..  
+
+around line 430   
+
+- get 30000 random points from normal distribution and save them in a vector prettyNormal.  
+- plot the density for your prettyNormal data vector.  
+- n the same graph plot the density of your data.  
+
+---
+Solution:
+
+
+
+```r
+plot(density(rnorm(30000, mean=4.5, sd=2.5)), col=2)
+lines(density(somedata))
+```
+
+![](VectorsAndFunctionsPrezentation_files/figure-html/unnamed-chunk-53-1.png)&lt;!-- --&gt;
+
+---
+class: inverse, middle, center
+
+## HELP!!??!!
+
+---
+
+### HELP!!??!!
+
+
+```r
+?rnorm
+example(rnorm)
+```
+---
+
+###  Exercise - estimate pi
+
+![](VectorsAndFunctionsPrezentation_files/figure-html/unnamed-chunk-55-1.png)&lt;!-- --&gt;
+
+---
+class: center, middle, inverse  
+### Functions     
+#### Open a new notebook 
+
+#### :)
+    </textarea>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function() {
+  var d = document, s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})();</script>
+
+<script>
+(function() {
+  var i, text, code, codes = document.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+})();
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

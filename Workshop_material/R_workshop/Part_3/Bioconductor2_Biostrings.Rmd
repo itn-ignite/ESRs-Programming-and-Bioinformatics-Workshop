@@ -1,0 +1,284 @@
+---
+title: "Bioconductor II"
+author: "Maja Kuzman"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+---
+class: inverse, center, middle
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+# Biostrings
+
+---
+ ## BiomaRt
+
+```{r, echo=FALSE}
+library(biomaRt)
+```
+ 
+There are handy wrappers: getGene() and getSequence(). Get sequence gor gene EML6.
+
+```{r}
+mart = useMart("ensembl", dataset="hsapiens_gene_ensembl")
+g <- getSequence( id = "100", type = "entrezgene", seqType = "gene_exon_intron", mart = mart)
+g
+```
+---
+
+This representation is not efficient.
+---
+
+```{r, message=FALSE}
+library(Biostrings)
+sequenceExample <- DNAString(g[[1]])
+sequence1 <- DNAStringSet(g[,1])
+
+sequence1
+```
+---
+
+You can get those sequences directly to Biostrings object if you have a genome database for example, BSgenome. This will download the entire genome so it takes space and time, don't do it now!
+```{r, eval=FALSE}
+if (!requireNamespace("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install("BSgenome", version = "3.8")
+library(BSgenome)
+available.genomes(splitNameParts=FALSE, type=getOption("pkgType"))
+library(BiocManager) 
+#install("BSgenome.Hsapiens.UCSC.hg38")
+#getSeq()
+```
+---
+
+### Exercise: Get the sequences for IL2, IL2RA and IL2RB genes. Those are hgnc_symbol-s .Save it in a variable genSeq1  
+
+--
+
+```{r}
+
+```
+
+---
+### reverseComplement
+
+There are cool functions you can use on a DNAStringSet object:  
+```{r}
+reverseComplement(genSeq1)
+complement(genSeq1)
+reverse(genSeq1)
+
+```
+---
+### DNAStringSet : subseq
+If you want to get subsequences, for example, extract all positions from 1000 - 4000 from all sequences, use subseq:
+
+```{r}
+subseq(genSeq1, 1000,4000)
+```
+---
+### DNAStringSet -> DNAString  
+You can extract subsequences from multiple positions in a single sequence. For this, a sequence has to be DNAString instead of DNAStringSet. This can be done easily if you subset DNAStringSet object with [[ ]].  
+
+```{r}
+genSeq1[1]
+genSeq_DNAString <- genSeq1[[1]]
+genSeq_DNAString 
+
+```
+---
+### DNAStrings - Views  
+
+If you want to get multiple subsequences starting and ending in different positions, you can do it on a single DNAString, and use Views to get this:  
+
+```{r}
+starts <- seq(1000,4000, by=100)
+subsequences <- Views(genSeq_DNAString, start= starts, end= starts+1000-1)
+subsequences
+
+```
+
+---
+
+## Exercise: Get sequences for all exons in IL2RA gene.  
+ 2 Points for an idea how to do this!
+```{r}
+
+```
+
+---
+### Nucleotide Frequency  
+
+Sometimes we are interested in nucleotide frequency of a sequence. There are nice functions for this:  
+### alphabetFrequency:  
+
+```{r}
+alphabetFrequency(subsequences)[1:6,]
+```
+---
+### Nucleotide Frequency  
+
+Sometimes we are interested in nucleotide frequency of a sequence. There are nice functions for this:  
+### trinucleotideFrequency:  
+
+```{r}
+trinucleotideFrequency(subsequences, as.prob = T)[1:6,1:9]
+```
+---
+### Nucleotide Frequency  
+
+Sometimes we are interested in nucleotide frequency of a sequence. There are nice functions for this:  
+### oligonucleotideFrequency:  
+
+```{r}
+oligonucleotideFrequency(subsequences, as.prob = T, width = 5)[1:6,1:6]
+```
+---
+### consensusMatrix  
+
+It is easy to get consensus for many sequences of some length:  
+```{r}
+consensusMatrix(subsequences)[,1:6]
+rowSums(consensusMatrix(subsequences))
+```
+---
+### Alignments  
+
+We can align sequences as well:  
+```{r}
+matchPattern("CATGCATGGGCCATGTCTGACACAGTCTGCATTTGTAAGTAAAG",genSeq_DNAString)
+pairwiseAlignment("CATGCATGGGCCATGTCTGACACAGTCTGCATTTGTAAGTAAAG",genSeq_DNAString)
+
+pairwiseAlignment("CATGCATGGGCCATGTCTGACACAGTCTNNNNTTGTAAGTAAAG",genSeq_DNAString)
+
+```
+---
+### stringDist  
+
+If you want to calculate distance between two sequences, use fast optimized function: stringDist:  
+
+```{r}
+stringDist(c("hazy", "lazy", "crazy"))
+
+```
+
+--
+
+```{r}
+as.matrix(stringDist(c("hazy", "lazy", "crazy")))
+
+```
+
+---
+
+### Exercise: dotplot  
+Make a dotplot of the following sequence with itself. Use window size 70 and threshold 34.  
+
+```{r, echo=FALSE}
+SpongeSequence <- DNAString("AAAGAATGCTTGATGTAAGTTTTATGAAATCACATATAGTAATTAGACCGATTTTTAGTACACAGTAAAGTGTTTAAAATTCAATTTTGGAAAAAAAACCAAGATGACCACCGATGTATGGGCCATTTCTGGATATGGCAAAATGACATATTCCATGATTCTAATCGGAGCTGCCCATTTATTCACAGAGAGTTAATTCAGGATATTCATAATGAGGCATGATCCCCAAAATTGTTCACGATATGATAGATGCAGTTGTGAACTGGCCAGGGATGATATTGCATGTAATGAACACAACGGTGGCACACTTTCTGGCCATTAAGTTCTACATCGTAATAATGAGATCATTCGCGGAGCGTCATGATGCGCTCTATAGGATTCTATTCATTTTTCCATTCATATTGCGGCGATGTACTCATGCGCATACCGCTGAATATAAGGGGGAGTTTGTATGCACGTATGGCTCGCGAAGCGGACGTGAATTATAGTGCTTGCATGTACACTCATGCTGCGTGACCAATAATCTCCACGGGACAACCGACTTCATGACACTATGCCCTTTGCCAAGGCTCAGGAACTAGATATATCTCTCTATTAGTGGACTTAAAAATTCCTTACTGTAATAACTAGATGCATGTAATAACTACATGCATGTATGCACATGCATGAAAACATACACATGATAGTACACTCCTTGATATGCACTAAATAACACATCTCTGACTGGTCTCTGCCATGCAGTTGGCCTCAAATGAGTAAACTAATGCTGGTGTGTAATACCTGGTTTAAAACTTCTAATGTGTGCATTTGAGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTACTACACACACGCACACATGCCATGTAGTTGCCATGGCAACACTTTTGTAGGGTCCTTGAAAGCTCCAAGACTGACAGCCAATCATTTTTAGGAAGGCCATACTCTTGTGTGAGACCGTGAAGACAATATATAGAATGGTTTGGTGTTTTGTACTTGCATGTACCTGAAGACAGTGGCCAGTGGTCAACATTGCCGTTGGCCCCACTCAAGTAGAAATTCCAATCAGGCAAGTGATACATGTATTGCCTTGTTAGTGGCCATATAAGGCAAGTAAAATATGCAGTTTACATTGCACTTTTTTTTCTAGAGAACAGTTGAATTCTGTGATGTCATTATTCAACTGTTCCCTGGAAGGCACATACTGTTAATAGCTGTGGTTAAACAGACCAAAGGTAGGGTGCAACTACCCCAGGGTTCTAGCAGTGTCAGCTGCGGTCAATGACCAGATTGGTGGTTTAGTGTTACCTAAACTTTTTACAGATCTTAAGATTTGGATTGTGTGTCTCTCTTCTCTCTCAGATATCCCGGTTACATACGTATCAAAGACGCAGATCTTAAACTTCTGTTAGCGCCTATCTTCTCTCTCAGACCTCCATTATCAGCTCAATCGCATGCAATACACATGTCGCTTGAGAGCTTGTAAAAAGTGTCAGATAACCACATGTAATACACATACAGTGTAGCTTGTAAAGAGTGTCATATATTGTTAATTCATATATGTGGCGAGATGCTAATCCAGCCAGAACTGGGCATTGTGCATGCATGTGCAATACTTAATATGATTCAATTCGTCCTGTTAATCAATCGGGTATCTGGTTGATAATTGGATGACCGCGGTTGAGCAACCGGACAATTATATTGCAAATCCGGACGGAACAAATACAATATATAAAAGAATATTGCTGCCAACCAACACCCTACCAAAATTGCCTGCAGCAAATATATAACGTAGTATTTTTGATTACTTTTGATATGGAATTTGGTACCTTTCATCGCTGTTTTCTGCTGGCCTTAATTTTACAAGGTAGGTCACACTGATGGAGTCGTAAGCTACAATCGGCTATCGCTCTGCCTGCATCGGCGCTCTTGCAGGGATACTGGGATCATCTACGAGTGAGACAAGAAGGGCAGCGTTTAATCCCCTCGTCCTTCAGCGAACATGGAGCGCATGGAGTAACTGGACGGAATGCAGTAGGTCGTGCGGAGGGGGCAGCCAGTGGCGATTCCGGGAGTGTCTAGGTGATGAACGGACGACAGCTCTGAACTGCACGGGAAACAGGATTGTAGAGAAACCTTGCAATACGCACTGTTGCGCAGGTTCGTTTCATGTGTATATAATACATGCACATGCATGTATACATGTGTATGTACGTGCATGAGAGTGTGCATGCATGTGCATTGCGCGGTGGTACTAGCTACGTAGAAACTTATACTGAAGTGATGTCTTGCACGATTGCCCTGTGCCCAGGTGACAATAGTGATTGCTGAGATTCAACTCTCCCCCACCCCCTCTCCCTCCCTCCTTTTCACCCTCCCTCTCCCATTCCCATTCCCGGACCTCGGGCCGGGTCTGAACAGTGGATTGTGTTTGGCTCAATTGGTCAGACTGGAGTGCGTGCAATAGGACATGCAACGGAGGGTGGCGCTATCGAACGAGAAACAATTCTCCCGGTCGTTGCGGCGGGATGAACTGCACAGGTGCAGAGAAGGAAGAAGAAGCTTGCAATCCTCAGCCATGTCCAGGTAAAGTACACAGACATGTCGAAACGTGTCAGCATGAGAACAACGGCCACGATCCCGCGAATAGAAACATCCGCACATGTGTTTGGCACGTTTAATTGTTTGTCGAGAGACAGTGCATGGAATGCGTGGAGCGAGTGGACCACCTGCAACTCGACGTGTAACTGCGGTTTAATTGTTTGTCGAGAGACAGTGCATGGAATGCGTGGAGCGAGTGGACCACCTGCAACTCGACGTGTAACTGCGGTTTTTAAATAATGCGCACAAGGAAGGGTGCACGAGTTTCCCCTCTACAGAGGGCTATATTATACTGCTAGAGAGATACGCAACGCCAGCAGACCAAGCCTTGAGAATGGAAGAAGTGTCCAAAGTAAAATGCTCGTATATGGACAGAAAAGGTATTGATTTCGTATGATCGGCATATGCCAGATGACTCTGGAGAACGGGGGAGAACTGGTCTTATAGTGATCGGTCCCTCGAAATGGAGGGATTCTCACTTACTTTCGTCAGCAAATAGTCACCGTAGAGACTGGAGGCAATCGTTAAGGCACAAGGTGTACCGGGGGATGGAATTCAAATTAATCGGACACCTACATTATCTGGACACTTCACAATGCGCGACGGAACGTATATACATGCGCGTTTCGGACAATATATATTTAATATTTATTGTCAATATCATGATTGAATCCACAATATATTGCTTTATTCGTTT")
+
+```
+
+```{r}
+SpongeSequence
+```
+
+#### 2 points for the idea !!
+
+---
+class: inverse, center, middle
+
+### Solution - show in app!  
+
+
+---
+### matchPattern  
+
+If you have a pattern you wish to search for, there is optimized function to do this:
+
+```{r}
+pattern <- c("TGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTGTG")
+matchPattern(pattern, SpongeSequence, max.mismatch = 15, with.indels = T)
+
+```
+
+---
+### Another example:  
+
+1. Search for pattern p2 in SpongeSequence, allowing 30 mismatches with indels.  
+
+2. Extract only those matches   
+
+3. Make a logo of them using the seqLogo library and the makePWM function. Plot the logo with seqLogo function.  
+
+
+--- 
+
+---
+class: inverse, center, middle
+
+### Solution 
+
+---
+
+```{r, eval=FALSE}
+p2 <- "CGACGTGTAACTGCGGTTTAATTGTTTGTCGAGAGACAGTGCATGGAATGCGTGGAGCGAGTGGACCACC"
+
+```
+
+---
+
+```{r}
+
+library(seqLogo)
+p <- makePWM(tt/40)
+seqLogo(p, ic.scale = F)
+
+```
+
+
+---
+
+matchPDict, countPDict, whichPDict, vmatchPDict, vcountPDict, vwhichPDict
+```{r}
+moreQueries <- PDict(DNAStringSet(c(pattern, p2)))
+matchPDict(moreQueries, SpongeSequence)
+
+```
+
+--- 
+
+---
+class: inverse, center, middle
+
+### More useful functions
+
+---
+
+#### vmatchPattern
+
+matchPattern, countPattern, vmatchPattern, vcountPattern, neditStartingAt,
+neditEndingAt, isMatchingStartingAt, isMatchingEndingAt,
+which.isMatchingStartingAt, which.isMatchingEndingAt
+
+#### pairwiseAlignment
+
+pairwiseAlignment, stringDist
+
+#### matchPWM: 
+
+matchPWM, countPWM
+
+#### OTHER
+
+matchLRPatterns, trimLRPatterns, matchProbePair, findPalindromes,
+findComplementedPalindromes
+ 

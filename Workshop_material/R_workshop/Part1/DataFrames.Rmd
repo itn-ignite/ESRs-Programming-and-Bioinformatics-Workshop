@@ -1,0 +1,159 @@
+---
+title: "Data Frames"
+author: "Maja Kuzman"
+date: "December 2, 2018 "
+output: html_document
+---
+
+## Data frames
+
+Data frame is a matrix that can store different variable types of same length. There are some data frames included to R. One of them is iris data set. This famous (Fisher's or Anderson's) iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.
+
+To check how a data frame looks like, you can use function head - it will show you the first 6 rows of a data frame.
+```{r}
+
+head(iris)
+?iris
+unique(iris[,5])
+```
+
+If you want to know more information about how the data frame is structured, use function str. You can also check for each column separately by using the function class.
+```{r}
+str(iris)
+class(iris[,1])
+
+```
+
+Data frames are usually structured such that rows represent observations and columns represent variables. You can check names of columns and rows by following functions:
+```{r}
+
+iris$Species
+#iris[,5]
+rownames(iris)
+iris2 <- iris
+colnames(iris2) <- c("a","a","b","b","b")
+head(iris2)
+iris2[,c("a","b")]
+#rownames(iris2)[1:2] <- "1"
+nrow(iris)
+ncol(iris)
+
+```
+
+
+To access a variable (column), call it by name using $ or [,""], or by position with [, ]. (Same as in matrices)
+```{r}
+iris$Sepal.Width
+iris$Sepal.Length
+iris[c(1,7),"Sepal.Width"]
+iris[,2]
+
+```
+
+You can subset a data frame by using the subset() function, or by indices. 
+
+```{r}
+head(iris[iris$Petal.Length < 2.5, ])
+(subset(iris, Petal.Length < 2.5))
+
+```
+
+Creating a data.frame:  
+```{r}
+dff <- data.frame(firstColunn = 1:10, 
+                  secondColumn = sample(500, 10))
+dff
+
+```
+Add new column :  
+```{r}
+dff$newColumn <- paste("row", 1:10, sep="_")
+dff
+```
+
+
+
+### Exercise: Basic operations on data.frames
+
+1) How would you get the petal width of the 10th row of the dataset (do it both with "[" and "$"? 
+```{r}
+
+
+```
+  
+2) How about all DISTINCT petal widths of the dataset? Hint: Use unique()  
+```{r}
+
+```
+
+3) Return rows of the dataset that contain data pertaining to the virginica species only.   
+```{r}
+
+```
+
+4) Copy iris to my.iris. Return mean sepal widths of all the versicolor flowers. 
+```{r}
+
+
+```
+
+5) Add another variable to my.iris, Petal.Width.Sqrd, which contains squared widths of the petal widths.  
+```{r}
+
+
+
+```
+
+6) Use split to (well... ) split my.iris into a list of data frames based on Species
+```{r}
+
+```
+
+7) Use sapply to loop through the created list. Calculate mean of Sepal.Length 
+
+```{r}
+
+```
+
+8) Use by to calculate mean of Sepal.Length  
+
+```{r}
+
+
+```
+
+9) Use quantile to get quantiles for Petal.Width.
+
+```{r}
+quantile(my.iris$Petal.Width)
+
+
+```
+
+10) Make a new column called groups10 which will represent the Petal.Width cut into 10 groups . (use cut.)
+
+```{r}
+
+```
+
+
+
+
+## Exercise: Estimate pi  
+
+Estimate the value of the number pi by randomly generating points inside a square and checking whether they fall within a circle inscribed in that square. 
+
+Create a data frame ddf that will have 1000 000 rows and columns x any y - random coordinates for the points in a square, and a column insideCircle that will have TRUE or FALSE if (x,y) coordinate is within a circle. 
+
+Calculate % difference from actual value of pi if you first set the seed to 1234?  
+
+Add two other columns : group and group50 - group the rows in 10 and 50 different groups.(hint: cut function)   
+
+$$\frac{P_{circle}}{P_{square}}=\frac{r^2\pi}{(2r)^2}=\frac{\pi}{4} $$
+
+
+```{r}
+set.seed(1234)
+
+```
+

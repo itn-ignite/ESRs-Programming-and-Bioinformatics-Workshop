@@ -1,0 +1,20 @@
+DATA
+# insert size as calculated by SAMTOOLS based on HISAT2 mapping of processed SRR1513844 reads to the reference genome assembly (NCBI GCA_002954075.1.): Insert size = 252.7, deviation = 109.4
+PE= pe 252 109  FULL_PATH_TO_YOU/workdir/cgat_hiseq_SRR1513844_1.fastq.gz  FULL_PATH_TO_YOU/workdir/cgat_hiseq_SRR1513844_2.fastq.gz
+
+NANOPORE=FULL_PATH_TO_YOU/workdir/cgat_ont_SRR6363418.porechopped_1kb.fasta
+
+END
+
+PARAMETERS
+EXTEND_JUMP_READS=0
+GRAPH_KMER_SIZE = auto
+USE_LINKING_MATES = 0
+LHE_COVERAGE=30
+CA_PARAMETERS =  cgwErrorRate=0.15
+KMER_COUNT_THRESHOLD = 1
+CLOSE_GAPS=1
+NUM_THREADS = 84
+JF_SIZE = 1000000000
+SOAP_ASSEMBLY=0
+END

@@ -1,0 +1,589 @@
+---
+title: "Practical session - Introduction"
+output: html_notebook
+date: October 9th 2018
+author: Maja Kuzman
+---
+
+This notebook contains all code, explanations and exercises for the introductory part of the course. After using this notebook, commit and push the changes to GitHub.
+
+#What is R and Rstudio
+
+R is a statistical programming language, easily extendable with packages. Great thing about it is a large active community. Rstudio is a great development environment for R. You can use R studio in different ways. 
+
+### Exercise : Get started  
+
+#### We can use R as a calculator!  
+
+Console is a place where you can interactively run R commands (and see the results right away).
+Try typing 9+2 to console and push enter!  
+
+...No surprise there...  
+
+Whatever you write in the console is executed right away but if you want to save the code that you are writing, there is a better way to do this. Go to File -> New File -> R script. By doing this, an empty file appears in the top left window.  
+
+Type (9+2)*2 to that file and push enter!  
+
+...Nothing happened... Your cursor moves to the next line and you can add another R command. But if you add normal text and exercute it it will produce an error. When you write an R script the code is not executed right away. 
++ If you put your cursor anywhere in the line which you wish to execute and hold CTRL and push ENTER, the code in that line is executed. You can see the output of this in the console.   
++ If you HIGHLIGHT just some part of the code (try highlighting 9+2 in the first line) you can also hold CTRL and push ENTER and the highlighted part will execute.  
+
+#### We can use R as a notebook / calculator. 
+
+The most handy way for using R to write reports and do research is to use R notebooks. Go to File -> New file -> R Notebook and open a new notebook file.  
+
+The very cool thing about R notebook is that it enables you to write comments and regular text withouth producing an error, but it also enables you to add special part (chunks for code) to notebooks where you can write and execute R code.  
+
+Write your text to this part.  
+
+
+
+
+##### Notice   
+
+code chunks are ALWAYS marked with specific signs - they start with a line containing \`\`\`{r} and nothing else, any number of lines with code, and end with a line containing \`\`\`. If you want to write normal text inside the code chunk, you can only do it as a comment, after writing #. All text in that line after # is not executed.
+
+To save your work go to  File -> save. Your code is automatically saved in .Rmd file and HTML output is also created. Only the code that was executed will be shown in HTML output. You can create Word document or PDF files easily by changing the knitting options. For this course, you will create your own HTML output.
+
+
+Now that you familiarized yourself with R notebooks, we can start to explore R! 
+
+As previousely mentioned, R can be used as a calculator. There are different operators that can be used in base R, 
+to add two numbers, use +
+substraction: -
+multiplication: *
+division: /
+potention: ^ 
+modulo: %%
+whole number division: %/%
+
+### Exercise 1: simple operations  
+What is the result of 13/3? How about 13%/%3? 
+Try also 13%%3.  
+
+Push **Ctrl+Alt+I** to add new Rscript chunk to the text. Do it and try to add two numbers there, and multipy them in the line below. Execute only one line by holding **Ctrl+Enter** inside line you want to execute. Execute the entire chunk by pushing play (Run Current Chunk). The result appears below the code chunk.  
+
+
+
+
+
+*We can even do better than that...* 
+
+# The basics: Variables and types
+
+R is not used world wide because it can add numbers together.. There are more powerful things you can do with it. 
+
+Simplest data sets in R are called **vector**s. You can make a vector by using the function c() (concatenate). Here is an example of vectors myFirstNumber and myFirstvector:
+
+```{r}
+myFirstNumber <- 0.1
+myFirstVector <- c(2, 3, 7, 8)
+
+```
+Number 0.1 is stored in a *variable* called myFirstNumber. Numbers 2,5,7 and 8 are stored in a *variable* called myFirstVector. Variables are "containers" for data. To confirm this, *call* the vector by typing the variables name and executing the command or you can print its content by using the function *print*. If you try to call a variable that you did not previousely initialized, R will tell you that the variable does not exist.
+When writing code, there is a very helpful hint: use TAB button to autocomplete the code you write. Try to write "myF" and press TAB inside of a code chunk. The code should autocomplete. Now push CTRL+ENTER to execute it. 
+
+**When you define a variable, it will always be available until you delete it or exit R.**
+
+
+Variables in R can have different **data types** and **data structures**. This is a quick overview of different types of data in R. In this part you do not have to understand how to deal with the data, just make sure you understand the differences.
+
+Data in R can be organized in vectors, matrices, arrays, data frames, lists and factors.
+
+###Vectors:
+
+
+Vectors are linear collections of data. Basically, they are **data of elements of same type** written in a line, stored in a variable.
+
+```{r}
+nVec <- c(1, 5, 7, 9, 12.5) # numeric vector
+cVec <- c("a", "b", "some words") # character vector
+lVec <- c(TRUE, FALSE, T, T, F) # logical vector
+
+vvec <- c(1,5, "nesto")
+vvec
+```
+
+We stored numbers (words, logical statements) in **variables** numVec (chaVec, logvec) Check this by calling the variables: 
+
+```{r}
+nVec
+cVec
+lVec
+```
+You can execute the code by highlighting all lines you wish to execute, or by pressing CTRL+ENTER within one line, or you can execute the entire chunk by pushing "play" in the top right corner of the chunk.
+
+### Matrices
+Matrices are tables that have rows and columns and store elements of same type.
+```{r}
+y <- matrix(1:20, nrow=5,ncol=4)
+y
+```
+
+
+### Data frames
+
+Data frames are tables that have rows and columns and are very simmilar to matrices. Difference is that in data frames, each column has one type of data. More columns can have the same type of data but one column can only store one data type. They are most common data types that we use in research - for example, each excel table is one data frame.
+
+```{r}
+mydf <- data.frame( firstColumn = c(1,5,7),
+                    secondColumn = c("a","b","third Element"))
+mydf
+```
+
+### Lists
+When you are dealing with a collection of data in R in which every object has different number of elements, and elements have different types, you can store this in a list of elements.
+
+```{r}
+l <- list(firstElement = c(1,5,44,6),
+          second = c("a", 3),
+          y)
+l
+
+```
+This list contains 3 elements. First element is called "firstElement" and contains numbers 1,5,44 and 6.
+Second element of the list is called "second" and contains words "a" and "3". You can see here that 3 is not a number, but is converted to character. This is because all elements in a vector must have the same type.
+Third element of the list does not have a name, as we can see by [[3]]. It is a matrix that we have previousely made.
+
+### Factors
+
+Factors are data type simmilar ro vectors, but with one difference - elements in a factor are previousely defined - levels. All elements can be one of the defined levels and nothing else. 
+
+```{r}
+
+gender <- c(rep("male",20), rep("female", 30)) 
+gender <- factor(gender) 
+gender
+gender[2] <- "unknown"
+gender
+as.numeric(gender)
+xx <- factor(sample(1:15,20, replace = T))
+as.numeric(xx)
+xx
+```
+
+These are basic types of data in R. Now we will go through them in more detail and learn how to use them. 
+
+# Vectors
+
+## The basics
+
+Simplest data sets in R are called **vector**s. When you want to store a single element in a vector, you can do it just by using <- operator. Number 3 is saved in a vector "somenumber". Call the vector to check that the number is indeed there.
+
+```{r}
+somenumber <- 3
+somenumber
+```
+
+You can make a vector by using the function c() (concatenate). Here is an example of vectors myFirstvector, and myFirstSequence:
+
+```{r}
+myFirstVector <- c("some words","p","word", "last one")
+myFirstSequence <- 1:4
+
+```
+MyFirstVector is a vector that contains four elements of type character; "some words", "p", "word" and "last one". As mentioned before, vectors always contain the same type of elements. We can make a sequence form 1 to 4 explicitely by using c(1,2,3,4), but there is a quicker way to do this in R, by using : (so c(1,2,3,4) is the same as 1:4).
+
+
+
+## Subsetting
+
+You can access individual elements of a vector by position they are stored in. We use **[ ]** to do this.
+
+```{r}
+# prints the whole vector
+myFirstVector
+myFirstSequence
+# prints third element in a vector
+myFirstVector[3]
+myFirstSequence[3]
+
+```
+
+You can also access multiple individual numbers at once by providing a vector of positions to look at:
+
+```{r}
+somePositions <- c(1,3)
+somePositions
+
+myFirstVector[c(1,3)]
+
+myFirstVector
+myFirstVector[somePositions]
+
+```
+You can use other vectors that contain positions to subset your vector. Examples:
+
+### Exercise: basics with vectors  
+
+1. Create a vector named myvector that contains numbers 15,16,17,18 and 20.    
+2. Get first and third number in the vector by subsetting.  
+Hint: Use ctrl+Alt+i to get a new code chunk!
+
+
+
+### What happened here??:
+```{r}
+someothervector <- c(1,0,1,0,1)
+myFirstVector[someothervector]
+myFirstVector[as.logical(someothervector)]
+
+```
+
+##Basic operations with vectors
+Basic operations are defined for vectors - same as for numbers. You can add vectors, substract them, multiply, divide and even use mod and div operators. We can store result in a vector if we need it for later.
+
+### Multiplication by constant 
+
+When you multiply a vector by constant, all elements are multiplied by this constant
+```{r}
+someothervector * 0.5
+```
+
+
+### Multiplication by some other vector of same size 
+
+When you multiply a vector by vector of same lengrh, elements in the same positions are multiplied.
+```{r}
+someothervector
+someothervector * c(0.3, 0.1, 0.5, 0.4, 0.6)
+
+```
+
+### Recycling  
+
+If you do some operation between two vectors of different sizes, the smaller vector will extend itself until it reches length of longer vector. The elements which are extended are added from the begining of the vector = recycled. This may or may not produce a warning.
+
+Example:
+```{r}
+someothervector * c(0.3,0.1)
+c(1,2,3,4,5,6) * 1:2 # doesnt produce a warning
+```
+
+### Basic comparisons  
+
+You can easily check any logical statements on vectors. For example, check if numbers stored in vectors are larger than 18 by typing myvector>18. You can also use check for smaller (<), smaller or equal ( <=) , larger or equal( >=) , equal(==), not equal(!=).  
+
+The following will return a logical vector for every compared position:
+```{r}
+someothervector == 1
+someothervector == c(1,0,1,0,1)
+someothervector>0
+```
+
+
+### what happened??  
+
+```{r}
+someothervector[someothervector>0]
+
+```
+
+
+
+### Exercise: Multiplication, recycling and comparison.   
+1. Multiply your myvector by c(0.1, 0.2)  
+     -> what do you expect to get??
+2. Check if you get what you expected by comparing it to vector you expect to get :)  
+
+
+
+### Logical operators
+
+With logical statements we can use logical operators. Logocal operators are signs that are used to connect more logical terms into one. There are 3 basic: and ( & ), OR ( | ) and NOT (!).
+If we have two conditions, first one writen in row and second in column, the following table represents result for AND:
+$$
+\begin{bmatrix}
+first-second&TRUE&FALSE\\
+TRUE&TRUE&FALSE\\
+FALSE&FALSE&FALSE\\
+\end{bmatrix}\
+$$
+OR:
+$$
+\begin{bmatrix}
+first-second&TRUE&FALSE\\
+TRUE&TRUE&TRUE\\
+FALSE&TRUE&FALSE\\
+\end{bmatrix}\
+$$
+They are used in a following way: 
+
+```{r}
+firstLogical <- c(TRUE, TRUE, FALSE, FALSE) 
+secondLogical <- c(TRUE, FALSE, TRUE, FALSE)
+firstLogical & secondLogical
+firstLogical | secondLogical
+! firstLogical
+
+```
+
+
+You can also subset by logical indexes. Only elements on those positions where logical expression is TRUE will be returned. For example:  
+```{r}
+myvector[c(TRUE, FALSE, TRUE, FALSE, FALSE)]# returns only elements where TRUE is - elements in position 1 and 3
+
+```
+
+This is a very powerful thing. 
+### Exercise: Subset by logical indexes
+1) Return all the elements from your vector that are divisable by 3. Hint: numbers divisable by 3 have residue 0 when divided by 3 :) - use %% .
+2) Return all the elements from your vector that are divisable by 3 OR NOT divisable by 2.
+
+
+
+## Some useful functions in R  
+- names : assignes names to elements  
+
+
+```{r}
+names(someothervector) 
+names(someothervector) <- c("one", "one","one", "zero","zero")
+someothervector
+```
+
+Use it wisely..
+
+```{r}
+someothervector["one"]
+```
+
+- length : will give you the length of the vector  
+
+```{r}
+length(someothervector)
+
+```
+
+- which : returns POSITIONS of elements which are TRUE (or larger than 0)   
+
+```{r}
+which(someothervector>0)
+
+```
+- unique  
+
+Gives you all unique elements in your vector:  
+
+```{r}
+unique(someothervector)
+```
+
+- table : gives you list of all elements and counts them  
+
+```{r}
+table(someothervector)
+```
+
+- sum, mean, sd, summary  
+
+```{r}
+sum(someothervector)
+mean(someothervector)
+sd(someothervector)
+summary(someothervector)
+```
+
+
+
+## more random math:  
+
+### sample   
+
+gives you random numbers from a vector
+```{r}
+sample(1:100, 10)
+```
+
+
+### rnorm  
+gives you 10 random numbers from normal distribution with mean=0 and sd=1  
+
+```{r}
+rnorm(10, mean = 0, sd = 1)
+```
+
+
+analogously, rpois, runif
+
+```{r}
+runif(n = 10, min=10, max=20)
+rpois(n = 10, lambda = 2)
+```
+
+
+#### Example usage: IS MY DATA NORMAL?  
+
+```{r}
+somedata <- c(1:10, 1:7, 1:5)
+plot(density(somedata))
+```
+
+*yeah, looks pretty normal...*  
+
+### Exercise:  
+Lets double check..  
+
+- get 30000 random points from normal distribution and save them in a vector prettyNormal.  
+- plot the density for your prettyNormal data vector.  
+- n the same graph plot the density of your data.  
+
+Solution:
+
+
+- . . .  
+
+### HELP!!??!!
+```{r, eval=FALSE}
+?names
+example(names)
+```
+
+
+
+
+### What will this do??  
+
+```{r}
+myvector[(1:5)%%2==T]
+
+```
+
+
+
+###  Exercise - estimate pi
+
+ - Estimate the value of the number pi by randomly generating points inside a square and checking whether they fall within a circle inscribed in that square.     
+ - % difference from actual value of pi if you first set the seed to 1234?  
+
+
+$$\frac{P_{circle}}{P_{square}}=\frac{r^2\pi}{(2r)^2}=\frac{\pi}{4} $$
+
+
+############################################################################
+                              END OF THE CHAPTER.
+############################################################################
+
+
+
+
+
+### Exercise: type conversion
+Create a vector that will contain logical TRUE, numbers 5 and 4 and words "no more". Add numbers from vector together (2nd and 3rd element).  
+```{r, eval=FALSE}
+vv <- c(2,3,"nesto")
+as.numeric(vv)
+```
+This did not work. Why? Check what your vector looks like. Use typeof() to check the type of data stored in any variable.
+
+```{r}
+
+
+
+```
+This happened because vectors can only store same type of data as elements. If you don't want to convert between types and you wish to store various types of data in one variable, you can use lists. Lists are only briefly explained here so you know how to deal with them but they will not be needed in this course.
+
+```{r}
+someList <- list(TRUE, 5, 4,"no more")
+someList
+
+someList[[2]]+someList[[3]]
+someList[2][[1]]
+
+```
+Esentially, lists are vectors, but with a special twist.. We know that vectors store same types of elements, so how are lists vectors? Remember that we call an element of a vector with a single bracket, []. Try to see what is the type of someList[1]. This means, call the first element of a vector someList. Then call the first element of the list someList. Lists are built recursivly. 
+All you need to know about lists is that unlike vectors, they can store different elements, and every element can be accesed with [[ ]] instead of []. 
+```{r}
+someList
+someList[[1]]
+someList[[2]]
+
+```
+
+###Exercise: accessing elements in a list
+Add the numbers from the list together. hint: Just like you would in a vector, but this time use double brackets [[ ]] instead of single [ ] .
+```{r}
+
+
+```
+
+Lists are very useful in R, but it is not neccessary to cover them in this short course. You need to know how you can get from list to vector. This  can be done with a simple unlist() function.
+
+###Exercise: From list to vector.
+
+Use unlist() function with someList as parametar and see what you get.
+```{r}
+unlist(someList)
+
+```
+
+## Matrices
+### Exercise: Basic operations on matrices:
+
+1) Create a matrix A with random numbers from 1 to 100, in 4 rows, use function sample.  
+```{r}
+
+set.seed(6)
+x <- sample(1:100,16)
+A <- matrix(x,4,byrow = T)
+A
+```
+
+2) Create a matrix B with 4 columns, each column contains numbers that correspond to that column. Hint: Use rep()    
+```{r}
+rep(1:4,each=4)
+
+```
+
+3) Multiply A and B using *  
+4) Multiply A and B using %*%  
+5) Add a row to A that will represent sum of all numbers in columns of A.  
+```{r}
+A <- rbind(A, colSums(A))
+
+
+
+```
+
+6) What is the sum of the diagonal elements of A? Use functions sum and diag.  
+```{r}
+sum(diag(A))
+```
+
+
+7) What is the product of last two elements of second row of A and first and last element in first column of B?  
+```{r}
+B <- matrix(rep(1:4,each=4), nrow=4)
+A[2, 3:4]*B[c(1,4),1]
+```
+
+
+8) What is the sum of all numbers larger than 5 in matrix A?  
+```{r}
+sum(A[A>5])
+
+which(A>5, arr.ind = T)
+```
+
+9) How many numbers in A are divizable by 3?  
+```{r}
+sum(A%%3==0)
+```
+
+10) What are the positions of numbers divizable by 3 in A?  
+```{r}
+ovepozicije<-which(A%%3==0, arr.ind = T)
+A[which(A%%3==0)]
+```
+
+###Example:Structure
+How to check type of elements?
+```{r}
+typeof(A)
+str(A)
+
+```
+
+
+
+

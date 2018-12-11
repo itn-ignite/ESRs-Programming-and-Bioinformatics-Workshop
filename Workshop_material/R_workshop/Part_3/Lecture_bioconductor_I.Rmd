@@ -1,0 +1,256 @@
+---
+title: "Bioconductor"
+output: html_notebook
+author: Maja Kuzman
+date: 5th November 2018
+---
+
+```{r global_options, include=FALSE}
+knitr::opts_chunk$set(fig.width=12, fig.height=5,
+                      echo=TRUE, warning=FALSE, message=FALSE)
+```
+## OPEN SOURCE software for bioinformatics
+#### 1649 packages:
+[Bioconductor](https://www.bioconductor.org/)
+
++ DNA sequencing
++ Microarray
++ Flow cytometry
++ Proteomics
++ Statistical analysis and comprehension
++ Work flows
++ Reproducible research
++ Great help in extensive documentation: vignettes
+
+[coRdon](https://bioconductor.org/packages/release/bioc/html/coRdon.html)
+
+
+```{r, echo=FALSE}
+#source("http://bioconductor.org/biocLite.R")
+#biocLite()
+#biocLite(c( "BiocStyle", "BiocInstaller", "ALL", "BiocParallel", "Biostrings","GenomicAlignments", "GenomicFeatures", "Gviz", "ShortRead", "GenomicRanges", "org.Hs.eg.db", "e1071","biomaRt"))
+#biocLite("org.Hs.eg.db")
+#biocLite("BSgenome.Hsapiens.UCSC.hg19")
+#library("BSgenome.Hsapiens.UCSC.hg19")
+# hg38 == GRCh38
+#hg19 ==grch37
+```
+
+##Genomic Ranges
+#### IRanges and GRanges
+
+```{r}
+library(IRanges)
+oneRange <- IRanges(start = 5,end = 10)
+```
+
+What is oneRange? Try to acess start of it!
+```{r}
+oneRange
+
+```
+You have failed. Look at its structure. Do you have an idea how you could access start?
+```{r}
+str(oneRange)
+```
+
+###  RTfM
+
+oneRange is an object of formal class "IRanges" from the IRanges package. Start is a slot in the object.
+Whenever you are dealing with formal classes, you can use showClass function to see how this class is defined: 
+```{r}
+showClass("IRanges")
+
+```
+
+Slots can be accessed via @, but this is not recommended. Objects are ment to be used in a certain way, and this is always controlled by functions defined on objects. For example, if you want to get start of IRanges object, look at the documentation and see how this can be done:
+
+```{r}
+browseVignettes("IRanges")
+start(oneRange)
+
+```
+
+Make another range and combine them together:
+
+
+```{r}
+
+anotherRange <- IRanges(start = c(7,1),
+                        end = c(15,3))
+anotherRange
+
+ir1 <- c(oneRange, anotherRange)
+ir1
+
+# We could have also done this:
+ir <- IRanges(c(5,7,1),width = c(6,9,3))
+ir
+
+all.equal(ir1, ir)
+```
+
+### Basics: 
+
+```{r}
+start(ir)
+end(ir)
+width(ir)
+```
+
+We can do cool things now:
+
+```{r}
+library(ggbio)
+library(GenomicRanges)
+plotIRanges <- function(ir){
+     ggr <- GRanges("1", ir)
+    ggplot(ggr) + 
+         geom_rect() +
+    theme_bw()
+}
+```
+
+```{r}
+plotIRanges(ir)
+```
+
+## Why is this useful?
+
+
+### Inter range  methods :
+Inter range transformations (e.g. reduce()) transform all the ranges together as a set to produce a new set of ranges. They return an object that is generally NOT parallel to the input object.
+
+union(), intersect(), setdiff(), gaps(), pgap()
+range() , reduce(), disjoin(),  disjointBins(), restrict()
+
+
+### Intra range  methods :
+Intra range transformations (e.g. shift()) transform each range individually (and independently of the other ranges). They return an object parallel to the input object, that is, where the i-th range corresponds to the i-th range in the input. 
+
+
+punion(), pintersect(), psetdiff(), pgap()
+shift(), narrow(), flank(), promoters()
+
+Exercise: 2 points!!
+Complete the following function so it works in the examples below:
+```{r, eval=FALSE}
+
+plotFunctionOnIr <- function(???){
+     ???
+}
+
+
+plotFunctionOnIr(intersect, ir,ir)
+plotFunctionOnIr(union, ir,ir)
+plotFunctionOnIr(gaps, ir)
+
+
+```
+
+Exercise:
+ 
+Try to understand what the functions mentioned above do!
+
+
+Finding overlaps:
+
+```{r}
+oneRange
+anotherRange
+
+findOverlaps(oneRange,ir)
+countOverlaps(oneRange,ir)
+
+```
+
+#### Exercise (1 point) Get coverage withouth using coverage function!
+```{r}
+coverage(ir)
+
+```
+
+This can be very useful, especially when combined with chromosomes!
+Genomic Ranges enable us to do exactly that!
+
+
+```{r}
+genomepart1 <- GRanges("chr2", IRanges(517,20000), strand="+")
+genomepart2 <- GRanges("chr2", IRanges(517,20000), strand="-")
+findOverlaps(genomepart1, genomepart2)
+```
+
+Why are there no overlaps?? 
+
+```{r}
+
+```
+
+#### Exercise: how many areas on chromosome 2 are overlapping at least 2 genes?? (1 point)  
+
+```{r}
+library(data.table)
+mygenes <- fread("http://hex.bioinfo.hr/~mfabijanic/Chr2Geneshg38.txt")
+
+chr2genes <- GRanges(mygenes$chromosome_name, 
+                   IRanges(mygenes$start_position, mygenes$end_position),
+                   strand = mygenes$strand,
+                   hgnc = mygenes$hgnc_symbol)
+chr2genes
+```
+
+Exercise (2 points): Remember blastResult table? Make a consensus of qfrom-qto per group again, use GRanges this time! Do it for full data frame and for best 3 results! Are consensuses very different? 
+```{r}
+blastRes <- fread("http://hex.bioinfo.hr/~mfabijanic/blastResultSmall.txt")
+blastRes
+```
+
+
+## biomaRt
+
+```{r, echo=FALSE}
+library(biomaRt)
+```
+ 
+Package for aquisition of ENSEMBL data sets!
+[Ensembl](http://www.ensembl.org/index.html)
+What version would you like to use?
+```{r}
+listEnsembl()
+listMarts()
+listEnsembl(GRCh="37")
+```
+ 
+Lets say we want to use ensemble genes version GRCh38 (current one). For a given mart, which organism do you choose?
+```{r}
+ensembl <- useEnsembl(biomart = "ensembl")
+listDatasets(ensembl)
+```
+
+
+#### Exercise: (1 point) find the line in listDatasets(ensembl) that holds Human or human in description
+```{r}
+```
+
+
+
+#### Exercise: (1 point)
+Select dataset and get only genes from chromosome 2, and only chromosome, start, end, geneid/name and descrioption and hgnc_symbol. Use getBM() function.
+
+The getBM() function is the main query function in biomaRt. It has four main arguments:
+
+attributes: is a vector of attributes that one wants to retrieve (= the output of the query).
+filters: is a vector of filters that one wil use as input to the query.
+values: a vector of values for the filters. In case multple filters are in use, the values argument requires a list of values where each position in the list corresponds to the position of the filters in the filters argument (see examples below).
+mart: is an object of class Mart, which is created by the useMart() function.
+
+```{r}
+hgenes <- useDataset("hsapiens_gene_ensembl",mart=ensembl)
+listAttributes(hgenes)
+
+```
+Solution:
+```{r}
+
+
+```

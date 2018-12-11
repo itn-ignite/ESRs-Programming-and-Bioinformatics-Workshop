@@ -1,0 +1,16 @@
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_canu_ont_assembly.contigs_pilon.fasta .
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_canu_pacbio_assembly.contigs_pilon.fasta .
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_masurca_ont_final.genome.scf.fasta .
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_masurca_pacbio_final.genome.scf.fasta .
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_ont_miniasm_racon_assembly_2_pilon.fasta .
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_pacbio_miniasm_racon_assembly_2_pilon.fasta .
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_spades_hiseq_assembly.fasta .
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_spades_ont_hybrid.fasta .
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_spades_pacbio_hybrid.fasta .
+
+
+
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_canu_ont_assembly.contigs_hisat2_mapped_sorted_SRR1513844_pilon.bam . 
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_canu_pacbio_assembly.contigs_hisat2_mapped_sorted_SRR1513844_pilon.bam . 
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_ont_miniasm_racon_assembly_2_hisat2_mapped_sorted_SRR1513844_pilon.bam . 
+cp /naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results/cgat_pacbio_miniasm_racon_assembly_2_hisat2_mapped_sorted_SRR1513844_pilon.bam . 

@@ -1,0 +1,48 @@
+MPP2 (lxlogin5,6,7)
+
+#!/bin/bash
+#
+#SBATCH --job-name=RANDOM
+#SBATCH --reservation=IGNITE
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=28
+#SBATCH --mail-user=EMAIL
+#SBATCH --mail-type=ALL
+#SBATCH --clusters=mpp2
+#SBATCH --time=48:00:00
+#SBATCH --mem=55000
+
+
+MPP3 (lxlogin8)
+
+#!/bin/bash
+#
+#SBATCH --job-name=RANDOM
+#SBATCH --reservation=IGNITE
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=64
+#SBATCH --mail-user=EMAIL
+#SBATCH --mail-type=ALL
+#SBATCH --clusters=mpp3
+#SBATCH --time=48:00:00
+#SBATCH --mem=90000
+
+
+IVYMUC (lxlogin10)
+
+#!/bin/bash
+#
+#SBATCH --job-name=RANDOM
+#SBATCH --reservation=IGNITE
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=16
+#SBATCH --mail-user=EMAIL
+#SBATCH --mail-type=ALL
+#SBATCH --clusters=mpp3
+#SBATCH --time=48:00:00
+#SBATCH --mem=55000
+
+
+
+If you were not able to generate an output you can cp the file from
+/naslx/projects/pn69xe/di29vos2/IGNITE/workdir_results
