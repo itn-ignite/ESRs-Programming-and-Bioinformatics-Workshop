@@ -11,6 +11,10 @@ header:
 #### Material for all the classes of the ESRs Programming Workshop with the solutions. 
 Some update will be made the following days to this page. Stay tuned!  
 
+## LRZ
+Instructions on how to use the supercomputing center of Munich ([LRZ](https://www.lrz.de/)).
+**NOTE:** Only for users with account of LRZ
+
 ## BASH  
 Provided in Markdown format and jupyther-notebook.  
 - [BASH Exercises](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/Bash_tutorial)  
