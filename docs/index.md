@@ -3,7 +3,6 @@
 layout: article
 article_header:
   background_image:
-    background_color: '#203028'
     src: /ignite.jpg
     
 ---
