@@ -3,7 +3,7 @@
 ---
 
 
-![](./assets/ignite.jpg)
+![](./assets/igni.jpg)
 
 
 ---
