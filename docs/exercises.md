@@ -51,5 +51,4 @@ Provided in Markdown format and jupyther-notebook.
 
   
 ---
-###### Creator: Ramon Rivera  
 ###### Last Modified: December 10, 2018  
