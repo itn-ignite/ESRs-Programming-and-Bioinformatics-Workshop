@@ -11,7 +11,7 @@ article_header:
     src: /ignite.jpg
     
 ---
-# ESRs Programming and Bioinformatics Workshop 
+### ESRs Programming and Bioinformatics Workshop 
 
 - [Webpage](http://www.itn-ignite.eu/)
 - [Twitter](https://twitter.com/itn_ignite)
