@@ -23,8 +23,5 @@ NOTE: This workshop was designed, developed and organized entirely by the ESRs.
 ---   
    
 
-
-
----  
 ###### Creator: Ramon Rivera    
 ###### Last Modified: October 25, 2018    
