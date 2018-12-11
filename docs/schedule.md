@@ -9,7 +9,7 @@ header:
 #### Here is the official schedule for the ESRs Programming and Bioinformatics Workshop in Split, Crotia (December 1-8, 2018).   
 
 #### December 1, 2018
-19:00 Meet and Greet / Get Together :beers: 
+19:00 Meet and Greet / Get Together
 
 #### Workshop Program (December 2-7, 2018)
 
