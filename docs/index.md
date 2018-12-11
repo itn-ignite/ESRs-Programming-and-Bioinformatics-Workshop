@@ -1,12 +1,10 @@
 
-# ESRs Programming and Bioinformatics Workshop 
+## ESRs Programming and Bioinformatics Workshop 
 ---
 <br />
 <br />
-
-
 ![](./assets/igni2.jpg)
-
+<br />
 
 ---
 
