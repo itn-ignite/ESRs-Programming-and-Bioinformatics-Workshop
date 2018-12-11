@@ -24,5 +24,4 @@ header:
 #### December 8, 2018 - Return to our Labs
 
 ---
-###### Creator: Ramon Rivera and Ksenia Juravel 
 ###### Last Modified: November 15, 2018  
