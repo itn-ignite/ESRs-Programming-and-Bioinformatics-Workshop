@@ -3,7 +3,7 @@
 ---
 
 
-![useful image]({{ https://i.imgur.com/KMVYY8O.png }}/assets/ignite.jpg)
+![](./assets/ignite.jpg)
 
 
 ---
