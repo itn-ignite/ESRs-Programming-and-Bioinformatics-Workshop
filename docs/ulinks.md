@@ -10,32 +10,24 @@ header:
 
 #### Links to useful material like books, online classes and more.
 
-# Linux
-#### Books
-- [Linux]()
-#### Online classes
-- [Classes]()
-#### Forums
-- [Forums]()  
+# Linux  
+- [Books]()  
+- [Online classes]()  
+- [Forums]()    
 
 # R
-#### Books
 - [R]()
-#### Online classes
-- [Classes]()
-#### Bioconductor
+- [RStudio]()
+- [Books]()
+- [Online classes]()
 - [Bioconductor]()
-#### Forums
+- [CRAN]()
 - [Forums]()
 
 # Python
-#### Books
-- [Python]()
-#### Online classes
-- [Classes]()
-#### BioPython
+- [Books]()
+- [Online classes]()
 - [BioPython]()
-#### Forums
 - [Forums]()  
 
 ---  
@@ -50,17 +42,14 @@ header:
 ### Biostars
 - [Forums](https://www.biostars.org/)
 
-### Perl
-#### Books
+### Perl  
 - [Perl]()
-#### Online classes
-- [Classes]()
-#### BioPerl
+- [Books]()
+- [Online classes]()
 - [BioPerl]()
-#### Forums
 - [Forums]()
 
 
 ---
 ###### Creator: Ramon Rivera  
-###### Last Modified: October 25, 2018  
+###### Last Modified: December 11, 2018  
