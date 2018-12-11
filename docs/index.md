@@ -1,6 +1,7 @@
 ---
 layout: article
-title: ESRs Programming and Bioinformatics Workshop                                         -- MedILS Split, Crotia --                    
+title: ESRs Programming and Bioinformatics Workshop 
+title:        -- MedILS Split, Crotia --                    
 mode: immersive
 header:
   theme: dark
