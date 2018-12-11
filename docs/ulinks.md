@@ -36,7 +36,12 @@ More updates and links coming soon. Stay tuned!
 - [Conda](https://www.anaconda.com/download/)
 - [Forums](https://python-forum.io/)  
 
+<br />
+
 ---  
+
+<br />
+
 # Other links  
 
 ### Perl  
