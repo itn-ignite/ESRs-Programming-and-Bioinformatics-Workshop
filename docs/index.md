@@ -1,9 +1,9 @@
 ---
+
 layout: article
 article_header:
   background_image:
     background_color: '#203028'
-    gradient: 'linear-gradient(200deg, rgba(34, 139, 87 , .2), rgba(139, 34, 139, .8))'
     src: /ignite.jpg
     
 ---
