@@ -8,7 +8,7 @@ article_header:
   type: overlay
   background_image:
     background_color: '#203028'
-    gradient: 'linear-gradient(100deg, rgba(34, 139, 87 , .4), rgba(139, 34, 139, .4))'
+    gradient: 'linear-gradient(200deg, rgba(34, 139, 87 , .2), rgba(139, 34, 139, .2))'
     src: /ignite.jpg
     
 ---
