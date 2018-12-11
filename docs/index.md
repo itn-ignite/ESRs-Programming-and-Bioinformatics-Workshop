@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://i.imgur.com/nG4PtGQ.jpg" width="800"/>
+  <img src="https://i.imgur.com/nG4PtGQ.jpg" width="1000"/>
 </p>
 
-## ESRs Programming and Bioinformatics Workshop 
+## Es Programming and Bioinformatics Workshop 
 
  
 Follow us in [Twitter](https://twitter.com/itn_ignite) and our [Webpage](http://www.itn-ignite.eu/). 
