@@ -1,13 +1,10 @@
 ---
 
-layout: article
-article_header:
-  background_image:
-    src: /ignite.jpg
+layout: home
     
 ---
 
-## Rs Programming and Bioinformatics Workshop 
+## ESRs Programming and Bioinformatics Workshop 
  
  
 Follow us in [Twitter](https://twitter.com/itn_ignite) and our [Webpage](http://www.itn-ignite.eu/). 
