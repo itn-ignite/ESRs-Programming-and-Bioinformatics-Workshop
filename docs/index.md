@@ -1,19 +1,7 @@
----
-
-layout: home
-home_header:
-  theme: dark
-  type: overlay
-  background_image:
-    background_color: '#203028'
-    gradient: 'linear-gradient(200deg, rgba(34, 139, 87 , .2), rgba(139, 34, 139, .8))'
-    src: /ignite.jpg
-    
----
-
-## ESRs Programming and Bioinformatics Workshop 
+# Es Programming and Bioinformatics Workshop 
  
-![](https://i.imgur.com/nG4PtGQ.jpg)
+<img src="https://i.imgur.com/nG4PtGQ.jpg" alt="drawing" width="200"/>
+
  
 Follow us in [Twitter](https://twitter.com/itn_ignite) and our [Webpage](http://www.itn-ignite.eu/). 
 
