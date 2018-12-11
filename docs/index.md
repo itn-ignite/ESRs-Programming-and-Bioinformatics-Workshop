@@ -3,7 +3,7 @@
 ---
 
 
-![](./assets/ignite.jpg)
+![](./assets/ignite.jpg =200x)
 
 
 ---
