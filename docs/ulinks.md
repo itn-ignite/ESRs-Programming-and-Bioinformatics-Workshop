@@ -9,7 +9,7 @@ header:
 ---
 
 #### Links to useful material like books, online classes and more.  
-More updates and links coming soon. Saty tuned!  
+More updates and links coming soon. Stay tuned!  
 
 # Linux  
 - [Books]()  
