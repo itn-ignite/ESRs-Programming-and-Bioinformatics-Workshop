@@ -23,10 +23,10 @@ header:
       zh-Hans:  关于
       zh-Hant:  關於
     url:        /ulinks.html
-  - titles:
-      en:       Q&A
-      zh:       关于
-      zh-Hans:  关于
-      zh-Hant:  關於
-    url:        /qna.html
+  #- titles:
+  #    en:       Q&A
+  #    zh:       关于
+  #    zh-Hans:  关于
+  #    zh-Hant:  關於
+  #  url:        /qna.html
 
