@@ -9,6 +9,7 @@ header:
 ---
 
 #### Material for all the classes of the ESRs Programming Workshop with the solutions. 
+Some update will be made the following days to this page. Stay tuned!  
 
 ## R  
 All the material is provided as Markdowns to be used in RStudio. Please make to use the last version of RStudio and R.  
@@ -18,7 +19,6 @@ All the material is provided as Markdowns to be used in RStudio. Please make to 
   - [Part 3](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/R_workshop/Part_3)
 
 ## Python  
-Presentations will be added soon.  
 - [Presentation](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/DataStucts_Algo)
 - [Exercises](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/Python/examples)  
 - [Arguments in python](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/Passing_arguments_in_Python)
