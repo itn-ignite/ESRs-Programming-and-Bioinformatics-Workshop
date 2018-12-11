@@ -1,8 +1,9 @@
-<p align="middle">
+<p align="left">
   <img src="https://i.imgur.com/nG4PtGQ.jpg" width=800 />
 </p>
 
-## Es Programming and Bioinformatics Workshop 
+
+## ESRs Programming and Bioinformatics Workshop 
 
 <br />
 <br />
