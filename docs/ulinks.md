@@ -8,7 +8,7 @@ header:
   
 ---
 
-#### Links to useful material like books, online classes and more
+#### Links to useful material like books, online classes and more.
 
 # Linux
 #### Books
@@ -50,7 +50,7 @@ header:
 ### Biostars
 - [Forums](https://www.biostars.org/)
 
-# Perl
+### Perl
 #### Books
 - [Perl]()
 #### Online classes
