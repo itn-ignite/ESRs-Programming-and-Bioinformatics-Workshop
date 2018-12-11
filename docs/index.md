@@ -1,6 +1,5 @@
 ---
 layout: article
-title: 
 mode: immersive
 header:
   theme: dark
