@@ -1,7 +1,6 @@
 ---
 layout: article
-titles: 
-  en: ESRs Programming and Bioinformatics Workshop
+title: ESRs Programming and Bioinformatics Workshop
 header:
   theme: dark   
 
