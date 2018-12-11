@@ -2,7 +2,7 @@
 layout: article
 title: Official Schedule
 header:
-  theme: dark
+  theme: light
     
 ---
 
