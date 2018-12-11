@@ -29,7 +29,7 @@ header:
 - [Online classes]()
 - [BioPython](https://biopython.org/)
 - [Conda](https://www.anaconda.com/download/)
-- [Forums]()  
+- [Forums](https://python-forum.io/)  
 
 ---  
 # Other links  
@@ -39,6 +39,7 @@ header:
 - [Books]()
 - [Online classes]()
 - [BioPerl](https://bioperl.org/)
+- [CPAN](https://www.cpan.org/)
 - [Forums]()
 
 ### Stack Overflow
