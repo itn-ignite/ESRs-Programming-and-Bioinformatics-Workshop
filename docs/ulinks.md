@@ -8,7 +8,8 @@ header:
   
 ---
 
-#### Links to useful material like books, online classes and more.
+#### Links to useful material like books, online classes and more.  
+More updates and links coming soon. Saty tuned!  
 
 # Linux  
 - [Books]()  
@@ -55,7 +56,7 @@ header:
 - [Forums](https://github.com/)
 
 ### GitPages
-To develop a simple website for your project. Use to built this website.  
+To develop a simple website for your project. Used to built this website.  
 - [Tutorial](https://pages.github.com/)
 
 
