@@ -7,7 +7,7 @@ article_header:
     
 ---
 
-## ESRs Programming and Bioinformatics Workshop 
+## Rs Programming and Bioinformatics Workshop 
  
  
 Follow us in [Twitter](https://twitter.com/itn_ignite) and our [Webpage](http://www.itn-ignite.eu/). 
