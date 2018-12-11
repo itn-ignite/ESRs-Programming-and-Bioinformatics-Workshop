@@ -11,7 +11,7 @@ home_header:
     
 ---
 
-## s Programming and Bioinformatics Workshop 
+## ESRs Programming and Bioinformatics Workshop 
  
 ![](https://i.imgur.com/nG4PtGQ.jpg)
  
