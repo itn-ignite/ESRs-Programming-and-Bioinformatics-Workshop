@@ -10,7 +10,7 @@
 #SBATCH --nodes=7
 #SBATCH --cpus-per-task=16
 #SBATCH --ntasks-per-node=1
-#SBATCH --mail-user=r.rivera@lrz.uni-muenchen.de
+#SBATCH --mail-user=user@lrz.uni-muenchen.de
 #SBATCH --mail-type=ALL
 #SBATCH --time=72:00:00 
 
@@ -27,7 +27,7 @@
 #SBATCH --clusters=mpp3
 #SBATCH --nodes=3
 #SBATCH --ntasks-per-node=64
-#SBATCH --mail-user=r.rivera@lrz.uni-muenchen.de
+#SBATCH --mail-user=user@lrz.uni-muenchen.de
 #SBATCH --mail-type=ALL 
 #SBATCH --time=48:00:00 
 
@@ -47,7 +47,7 @@
 #SBATCH --cpus-per-task=96
 #SBATCH --ntasks-per-node=1
 #SBATCH --mem=2000gb
-#SBATCH --mail-user=r.rivera@lrz.uni-muenchen.de
+#SBATCH --mail-user=user@lrz.uni-muenchen.de
 #SBATCH --mail-type=ALL
 #SBATCH --time=48:00:00
 
