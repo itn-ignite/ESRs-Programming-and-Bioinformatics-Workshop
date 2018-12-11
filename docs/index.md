@@ -11,6 +11,6 @@ article_header:
 ---
 ## ESRs Programming and Bioinformatics Workshop 
 
-- [Webpage](http://www.itn-ignite.eu/)       - [Twitter](https://twitter.com/itn_ignite)
+Follow us in [Twitter](https://twitter.com/itn_ignite) and our [Webpage](http://www.itn-ignite.eu/). 
 
 ###### This project has received funding from the European Union’s Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No 764840
