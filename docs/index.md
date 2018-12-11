@@ -2,7 +2,9 @@
 ## ESRs Programming and Bioinformatics Workshop 
 ---
 
-![](https://i.imgur.com/nG4PtGQ.jpg)
+
+![useful image]({{ site.url }}/assets/ignite.jpg)
+
 
 ---
 
