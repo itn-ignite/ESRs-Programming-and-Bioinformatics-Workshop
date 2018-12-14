@@ -70,10 +70,11 @@ To develop a simple website for your project. Used to built this website.
 - [Tutorial](https://pages.github.com/)
 
 
-
+<br />
 ---
+<br />
+<br />
 ###### Last Modified: December 11, 2018  
 <br />
-<br />
 
-**NOTE:** We do not own any of this sources. These are links to useful material that appear after searching in google the different topics.
+###### **NOTE:** We do not own any of this sources. These are links to useful material that appear after searching in google the different topics.
