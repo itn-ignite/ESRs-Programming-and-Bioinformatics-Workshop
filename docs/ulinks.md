@@ -11,6 +11,7 @@ header:
 #### Links to useful material like books, online classes and more.  
 More updates and links coming soon. Stay tuned!  
 
+
 # IGNITE
 - [Webpage](http://www.itn-ignite.eu/)
 - [Twitter](https://twitter.com/itn_ignite)
@@ -18,7 +19,7 @@ More updates and links coming soon. Stay tuned!
 # Linux  
 - [Books]()  
 - [Online classes]()  
-- [Forums]()    
+- [Forums])    
 
 # R
 - [R](https://cran.r-project.org/)
@@ -72,3 +73,7 @@ To develop a simple website for your project. Used to built this website.
 
 ---
 ###### Last Modified: December 11, 2018  
+<br />
+<br />
+
+**NOTE:** We do not own any of this sources. These are links to useful material that appear after searching in google the different topics.
