@@ -31,7 +31,8 @@ More updates and links coming soon. Stay tuned!
 - [R](https://cran.r-project.org/)
 - [RStudio](https://www.rstudio.com/products/rstudio/download/)
 - [Books]()
-- [Online classes]()
+- [Online classes]
+    - [Link 1](https://www.coursera.org/learn/r-programming)
 - [Bioconductor](https://www.bioconductor.org/)
 - [Forums]()
 
