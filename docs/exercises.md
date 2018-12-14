@@ -50,7 +50,7 @@ Provided in Markdown format and jupyter-notebook.
 
 ## Pandas
 Provided in Markdown format and jupyter-notebook.
-- [Pandas](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/Pandas)
+- [Exercises](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/Pandas)
 
   
 ---
