@@ -23,7 +23,7 @@ Instructions on how to use the supercomputing center of Munich ([LRZ](https://ww
 
 
 ## BASH  
-Provided in Markdown format and jupyther-notebook.  
+Provided in Markdown format and jupyter-notebook.  
 - [BASH Exercises](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/Bash_tutorial)  
 - [BASH - sample data](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/Bash_tutorial/ignite_workshop)  
 
@@ -45,7 +45,7 @@ All the material is provided as Markdowns to be used in RStudio. Please make to 
 
 
 ## Biopython 
-Provided in Markdown format and jupyther-notebook.   
+Provided in Markdown format and jupyter-notebook.   
 - [Exercises](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/Biopython)
 - [Pandas](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/Pandas)
 
