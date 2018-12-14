@@ -19,7 +19,9 @@ More updates and links coming soon. Stay tuned!
 # Linux  
 - [Books]()  
 - Online classes  
-    - [Intro to Linux](https://training.linuxfoundation.org/resources/free-courses/introduction-to-linux/?_sft_content_type=free-course)
+    - [Link 1](https://training.linuxfoundation.org/resources/free-courses/introduction-to-linux/?_sft_content_type=free-course)
+    - [Link 2](https://www.edx.org/course/introduction-to-linux)
+    - [Link 3](https://www.udemy.com/courses/search/?src=ukw&q=linux)
 - Forums
     - [Unix](https://www.unix.com/)
     - [Unix stackexchange](https://unix.stackexchange.com/)
