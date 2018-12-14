@@ -19,8 +19,9 @@ More updates and links coming soon. Stay tuned!
 # Linux  
 - [Books]()  
 - [Online classes]()  
-- [Forums]
+- Forums
     - [Unix](https://www.unix.com/)
+    - [Unix stackexchange](https://unix.stackexchange.com/)
 - [Regular Expressions](https://michael.tngconsulting.ca/UNIX_Regular_Expressions.pdf)
 
 # R
