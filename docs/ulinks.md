@@ -36,7 +36,9 @@ More updates and links coming soon. Stay tuned!
     - [Link 2](https://www.edx.org/learn/r-programming)
     - [Link 3](https://www.datacamp.com/courses/free-introduction-to-r)
 - [Bioconductor](https://www.bioconductor.org/)
-- [Forums]()
+- Forums
+    - [Link 1](https://r-dir.com/community/forums.html)
+    - [Link 2](https://r-forge.r-project.org/forum/forum.php?forum_id=78&group_id=34)
 
 # Python
 - [Python](https://www.python.org/)
