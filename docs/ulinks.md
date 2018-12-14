@@ -79,4 +79,4 @@ To develop a simple website for your project. Used to built this website.
 
 <br />
 
-###### **NOTE:** We do not own any of this sources. These are links to useful material that appear after searching in google the different topics.
+###### NOTE: We do not own any of this resources. These are links to useful material that appear after searching in google the different topics. IF you are the owner of any of these resources and you do not want your resource to be shown here please send us a message. Thanks!
