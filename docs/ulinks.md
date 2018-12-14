@@ -66,6 +66,9 @@ More updates and links coming soon. Stay tuned!
 - [BioPerl](https://bioperl.org/)
 - [CPAN](https://www.cpan.org/)
 - [Forums]()
+    - [Link 1](https://www.perl.org/community.html)
+    - [Link 2](http://perlguru.com/)
+    - [Link 3](https://www.perlmonks.org/?)
 
 ### Stack Overflow
 - [Forums](https://stackoverflow.com/)
