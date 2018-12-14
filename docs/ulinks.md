@@ -64,8 +64,8 @@ More updates and links coming soon. Stay tuned!
 - [Books]()
 - Online classes]
     - [Link 1](https://www.learn-perl.org/)
-    - [Link 2]()
-    - [Link 3]()
+    - [Link 2](https://alison.com/course/fundamentals-of-perl-programming)
+    - [Link 3](https://www.udemy.com/perltutorial/)
 - [BioPerl](https://bioperl.org/)
 - [CPAN](https://www.cpan.org/)
 - Forums
