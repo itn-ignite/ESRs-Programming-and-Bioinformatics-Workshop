@@ -43,7 +43,10 @@ More updates and links coming soon. Stay tuned!
 # Python
 - [Python](https://www.python.org/)
 - [Books]()
-- [Online classes]()
+- Online classes
+    - [Link 1](https://www.edx.org/learn/python)
+    - [Link 2](https://www.coursera.org/courses?query=python)
+    - [Link 3](https://www.learnpython.org/)
 - [BioPython](https://biopython.org/)
 - [Conda](https://www.anaconda.com/download/)
 - [Forums](https://python-forum.io/)  
