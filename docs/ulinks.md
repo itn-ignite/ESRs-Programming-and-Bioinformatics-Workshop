@@ -62,10 +62,13 @@ More updates and links coming soon. Stay tuned!
 ### Perl  
 - [Perl](https://www.perl.org/)
 - [Books]()
-- [Online classes]()
+- Online classes]
+    - [Link 1](https://www.learn-perl.org/)
+    - [Link 2]()
+    - [Link 3]()
 - [BioPerl](https://bioperl.org/)
 - [CPAN](https://www.cpan.org/)
-- [Forums]()
+- Forums
     - [Link 1](https://www.perl.org/community.html)
     - [Link 2](http://perlguru.com/)
     - [Link 3](https://www.perlmonks.org/?)
