@@ -33,7 +33,7 @@ Provided in Markdown format and jupyter-notebook.
 
 ## R  
 All the material is provided as Markdowns to be used in RStudio. Please make to use the last version of RStudio and R.  
-- [R Exercises](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/R_workshop)   
+- R Exercises
   - [Part 1](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/R_workshop/Part1)
   - [Part 2](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/R_workshop/Part_2)
   - [Part 3](https://github.com/itn-ignite/ESRs-Programming-and-Bioinformatics-Workshop/tree/master/Workshop_material/R_workshop/Part_3)
