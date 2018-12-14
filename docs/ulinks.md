@@ -19,7 +19,7 @@ More updates and links coming soon. Stay tuned!
 # Linux  
 - [Books]()  
 - [Online classes]()  
-- [Forums])    
+- [Forums]()    
 
 # R
 - [R](https://cran.r-project.org/)
