@@ -55,9 +55,11 @@ If your system use modules click [here.](/modules.md)
 
 To learn how to install locally in your folder click [here](/locally.md)
 
-1- We installed all the programs we may need in this location.  
+1- We installed all the programs we may need in this locations.  
 ```
 /naslx/projects/pn69xe/di29vos2/ignite_tools
+/naslx/projects/pn69xe/di52zuy/ignite_tools_py3/bin
+/naslx/projects/pn69xe/di52zuy/ignite_tools_py2/bin
 ```   
 You need to add this to your PATH so each time you type the name of a program the system will now where to look for it.  
 
@@ -73,6 +75,8 @@ nano .bashrc
 4- Add the following line to the end of the `.bashrc` file.  
 ```bash
 export PATH="$PATH:/naslx/projects/pn69xe/di29vos2/ignite_tools"   
+export PATH="$PATH:/naslx/projects/pn69xe/di52zuy/ignite_tools_py3/bin"
+export PATH="$PATH:/naslx/projects/pn69xe/di52zuy/ignite_tools_py2/bin"
 ```   
 Save and close the file.  
 
